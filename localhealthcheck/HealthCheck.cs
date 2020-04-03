@@ -7,6 +7,7 @@ namespace testhealthcheck
     {
         public DateTime Date { get; set; }
 
+        //test
         public string MainframeStatus { get; set; }
     }
 }
