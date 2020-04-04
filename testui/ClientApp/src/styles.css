@@ -14,3 +14,13 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.block {
+  /*width: 75%;*/
+  float: left;
+}

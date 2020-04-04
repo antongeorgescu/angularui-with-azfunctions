@@ -1,0 +1,11 @@
+<h1>Country Info</h1>
+
+<p>This is a short list of the selected country information.</p>
+
+<p aria-live="polite">Country: <strong>{{ countryInfo.name }}</strong></p>
+<p aria-live="polite">Capital: <strong>{{ countryInfo.capital }}</strong></p>
+<p aria-live="polite">Population: <strong>{{ countryInfo.population | number:'.2' }}</strong></p>
+<p aria-live="polite">Surface (sq km): <strong>{{ countryInfo.area | number:'.2' }}</strong></p>
+<br/>
+<hr />
+Country:&nbsp;<input #country>&nbsp;<button class="btn btn-primary" (click)="getCountryInfo(country.value)">Get Information</button>

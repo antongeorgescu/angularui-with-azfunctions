@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TestBlockerComponent } from './test-blocker/test-blocker.component';
+import { CountryInfoComponent } from './country-info/country-info.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TestBlockerComponent } from './test-blocker/test-blocker.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    TestBlockerComponent
+    TestBlockerComponent,
+    CountryInfoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +30,7 @@ import { TestBlockerComponent } from './test-blocker/test-blocker.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'country-info', component: CountryInfoComponent },
       { path: 'test-blocker', component: TestBlockerComponent },
     ])
   ],
