@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testui", "testui\testui.csproj", "{9BB1CCAA-1294-418F-BDC0-7F080B7053BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "angularspa", "testui\angularspa.csproj", "{9BB1CCAA-1294-418F-BDC0-7F080B7053BB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "azhealthcheck", "azhealthcheck\azhealthcheck.csproj", "{C9CE52EC-C2B6-42AE-A555-42E52F7737BF}"
 EndProject
