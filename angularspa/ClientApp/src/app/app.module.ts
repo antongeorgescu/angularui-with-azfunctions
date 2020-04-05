@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
+import { ProfileComponent } from './profile/profile.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TestBlockerComponent } from './test-blocker/test-blocker.component';
 import { CountryInfoComponent } from './country-info/country-info.component';
@@ -20,7 +20,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
+    ProfileComponent,
     FetchDataComponent,
     TestBlockerComponent,
     CountryInfoComponent
@@ -55,11 +55,11 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      //{ path: 'fetch-data', component: FetchDataComponent, canActivate : [MsalGuard] },
-      //{ path: 'country-info', component: CountryInfoComponent, canActivate: [MsalGuard] },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'country-info', component: CountryInfoComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'fetch-data', component: FetchDataComponent, canActivate : [MsalGuard] },
+      { path: 'country-info', component: CountryInfoComponent, canActivate: [MsalGuard] },
+      //{ path: 'fetch-data', component: FetchDataComponent },
+      //{ path: 'country-info', component: CountryInfoComponent },
       { path: 'test-blocker', component: TestBlockerComponent },
     ])
   ],
