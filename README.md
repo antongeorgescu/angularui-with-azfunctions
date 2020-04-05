@@ -14,3 +14,5 @@ The code for Azure Active Directory authentication follows the instructions give
 I also have used the code from the sample application under (https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) This sample demonstrates how to use MSAL Angular to login, logout, protect a route, and acquire an access token for a protected resource such as Microsoft Graph.
 
 For getting started with MSAL library for JavaScript you can browse github project under [MSAL Basics](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/MSAL-basics)
+
+An important tutorial, presented step-by-step is under [Build Angular single-page apps with Microsoft Graph](https://docs.microsoft.com/en-us/graph/tutorials/angular)
