@@ -4,7 +4,7 @@ Microsoft Authentication Library (MSAL) enables developers to acquire tokens fro
 
 ### Basic Design
 
-![](https://github.com/antongeorgescu/angularui-with-azfunctions/blob/master/Documentation/Angular_SPA_with_MS_Graph_API_Basic_Design.png)
+![](https://github.com/antongeorgescu/angularui-with-azfunctions/blob/master/documentation/Angular_SPA_with_MS_Graph_API_Basic_Design.png)
 
 In case of troubles with generating MS Graph API access token follow the instructions under [Response type ‘token’ is not enabled for the application](https://community.dynamics.com/crm/b/akmscrmblog/posts/response-type-token-is-not-enabled-for-the-application)
 1. Select the Configure tab of your application’s entry in the Azure Management Portal.
