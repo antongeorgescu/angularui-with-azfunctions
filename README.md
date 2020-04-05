@@ -6,3 +6,5 @@ Microsoft Authentication Library (MSAL) enables developers to acquire tokens fro
 The code for Azure Active Directory authentication follows the instructions given under [Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA)](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-angular)
 
 I also have used the code from the sample application under (https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) This sample demonstrates how to use MSAL Angular to login, logout, protect a route, and acquire an access token for a protected resource such as Microsoft Graph.
+
+For getting started with MSAL library for JavaScript you can browse github project under [MSAL Basics](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/MSAL-basics)
