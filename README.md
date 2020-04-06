@@ -19,3 +19,5 @@ I also have used the code from the sample application under (https://github.com/
 For getting started with MSAL library for JavaScript you can browse github project under [MSAL Basics](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/MSAL-basics)
 
 An important tutorial, presented step-by-step is under [Build Angular single-page apps with Microsoft Graph](https://docs.microsoft.com/en-us/graph/tutorials/angular)
+
+To register the Angular SPA application into an Azure Active Directory domain I used the detailed tutorial provided under [Quickstart: Sign in users and get an access token in an Angular SPA](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-angular)
