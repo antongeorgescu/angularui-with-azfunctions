@@ -13,6 +13,8 @@ import { TestBlockerComponent } from './test-blocker/test-blocker.component';
 import { CountryInfoComponent } from './country-info/country-info.component';
 import { MsalModule, MsalInterceptor, MsalGuard } from '@azure/msal-angular';
 
+import { environment } from '../environments/environment';
+
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
 @NgModule({
@@ -31,9 +33,9 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     FormsModule,
     MsalModule.forRoot({
       auth: {
-        clientId: "b4bd03e4-cb74-40cf-90c1-1a1bfde4b80e",
-        authority: "https://login.microsoftonline.com/e8422127-880e-4288-928e-4ced14423628",
-        redirectUri: "http://localhost:27822"
+        clientId: environment.clientId,
+        authority: environment.authority,
+        redirectUri: environment.redirectUri
       },
       cache: {
         cacheLocation: 'localStorage',
