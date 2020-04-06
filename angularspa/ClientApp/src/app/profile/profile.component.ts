@@ -22,10 +22,6 @@ export class ProfileComponent implements OnInit {
   }
 
   getProfile() {
-    //this.httpClient.get(GRAPH_ENDPOINT).toPromise()
-    //  .then(profile => {
-    //    this.profile = profile;
-    //  });
     this.httpClient.get(GRAPH_ENDPOINT).subscribe(
       data => {
         this.profile = data;

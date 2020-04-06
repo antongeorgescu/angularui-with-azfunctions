@@ -1,7 +1,26 @@
-<h1>User Profile: {{profile?.displayName}}</h1>
+<h1>Logged in User Profile</h1>
 
-<p>
-  Display name: {{profile?.displayName}}
-</p>
+<table>
+  <tr>
+    <td>Display name:</td>
+    <td>{{profile?.displayName}}</td>
+  </tr>
+  <tr>
+    <td>Given name:</td>
+    <td>{{profile?.givenName}}</td>
+  </tr>
+  <tr>
+    <td>Job title:</td>
+    <td>{{profile?.jobTitle}}</td>
+  </tr>
+  <tr>
+    <td>Mobile phone:</td>
+    <td>{{profile?.mobilePhone}}</td>
+  </tr>
+  <tr>
+    <td>Azure ID:</td>
+    <td>{{profile?.id}}</td>
+  </tr>
+</table>
 
 
