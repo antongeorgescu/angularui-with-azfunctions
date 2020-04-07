@@ -1,7 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 import { MsalService, BroadcastService } from '@azure/msal-angular';
 import { Logger, CryptoUtils } from 'msal';
-import { MessagingService } from '../app/messaging-service.service';
 
 @Component({
   selector: 'app-root',
@@ -11,21 +10,14 @@ export class AppComponent implements OnInit {
   title = 'MSAL Angular - Sample App';
   isIframe = false;
   loggedIn = false;
-  sharedGlobals;
-  static MessageService: MessagingService;
-
+  
   constructor(
     private broadcastService: BroadcastService,
-    private authService: MsalService,
-    private messageService: MessagingService)
-  {
-
-  }
+    private authService: MsalService)
+  { }
 
   ngOnInit() {
     this.isIframe = window !== window.parent && !window.opener;
-
-    AppComponent.MessageService = this.messageService;
 
     this.checkAccount();
 
@@ -63,28 +55,13 @@ export class AppComponent implements OnInit {
       
       this.authService.loginPopup().then(function (loginResponse) {
         //login success
-        
         let idToken = loginResponse.idToken;
-        //if (!AppComponent.checkUserInRole(idToken))
-        //  throw new Error("User is not granted the role to use this application");
-
-        // update the consumers with user app roles
-        AppComponent.MessageService.sendMessage(idToken);
         console.log(idToken);
       }).catch(function (error) {
         //login failure
         console.log(error);
       });
     }
-  }
-
-  static checkUserInRole(token) {
-    if (token.claims.roles == undefined)
-      return false;
-    let inRole = token.claims.roles[0];
-    if (!(inRole == "AtheromFan"))
-      return false;
-    return true;
   }
 
   logout() {

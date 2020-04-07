@@ -52,9 +52,17 @@
     <td>Authority:</td>
     <td>{{appenvironment.authority}}</td>
   </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
   <tr>
-    <td>Access Token:</td>
-    <td>{{accessToken}}</td>
+    <td valign="top">Access Token:</td>
+    <td>
+      <table border="1">
+        <tbody>
+          <tr><td>Name:</td><td>{{accessToken.name}}</td></tr>
+          <tr><td>Username:</td><td>{{accessToken.preferred_username}}</td></tr>
+          <tr *ngFor="let role of accessToken.roles"><td>Role:</td><td>{{role}}</td></tr>
+         </tbody>
+      </table>
   </tr>
 </table>
 
