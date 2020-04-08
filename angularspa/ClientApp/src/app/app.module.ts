@@ -51,7 +51,9 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
       ],
       unprotectedResources: [],
       protectedResourceMap: [
-        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
+        ['https://graph.microsoft.com/v1.0/me', ['user.read']],
+        ['https://graph.microsoft.com/v1.0/me/memberOf', ['user.read']],
+        ['https://graph.microsoft.com/v1.0/directoryRoles', ['user.read']]
       ],
       extraQueryParameters: {}
     }),
