@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
   }
   
   ngOnInit() {
+
     this.getProfile();
     this.getMembership();
     this.getRoles();
@@ -61,9 +62,7 @@ export class ProfileComponent implements OnInit {
   refresh() {
     this.getProfile();
     this.getMembership();
+    this.getRoles();
   }
 
-  logout() {
-    this.msalService.logout();
-  }
 }
