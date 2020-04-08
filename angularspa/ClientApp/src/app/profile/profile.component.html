@@ -38,16 +38,42 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
-          <tr>
+          <!--<tr>
             <td>Groups:</td>
             <td>{{azgroups}}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
             <td>Roles:</td>
             <td>{{azroles}}</td>
-          </tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>-->
         </tbody>
       </table>
     </td>
   </tr>
+</table>
+<br />
+<table border="1">
+  <tbody>
+    <tr>
+      <td>Group Id</td>
+      <td>Group Name</td>
+    </tr>
+    <tr *ngFor="let group of azgroups"><td>{{group.id}}</td><td>{{group.displayName}}</td></tr>
+  </tbody>
+</table>
+<br />
+<table border="1">
+  <tbody>
+    <tr>
+      <td>Role Id</td>
+      <td>Role Name</td>
+    </tr>
+    <tr *ngFor="let role of azroles"><td>{{role.id}}</td><td>{{role.displayName}}</td></tr>
+  </tbody>
 </table>
 <br/>
 <table>
@@ -75,7 +101,7 @@
     </td>
   </tr>
 </table>
-<br/>
+<br />
 <table>
   <tr>
     <th>JWT Access Token body:</th>
@@ -87,13 +113,13 @@
           <tr><td>Name:</td><td>{{accessToken.name}}</td></tr>
           <tr><td>Username:</td><td>{{accessToken.preferred_username}}</td></tr>
           <tr *ngFor="let role of accessToken.roles"><td>Role:</td><td>{{role}}</td></tr>
-         </tbody>
+        </tbody>
       </table>
   </tr>
 </table>
 
 
-<br/>
+<br />
 <button type="button" class="btn btn-outline-primary" (click)="refresh()">Refresh</button>
 
 

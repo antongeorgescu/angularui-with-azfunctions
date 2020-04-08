@@ -28,9 +28,7 @@ export class ProfileComponent implements OnInit {
   
   ngOnInit() {
     this.getProfile();
-    //this.getMembership().then(function (x) {
-    //  this.getRoles(x);
-    //});
+    this.getMembership();
     this.getRoles();
     this.accessToken = this.authService.getAccount().idToken;
     
@@ -44,20 +42,18 @@ export class ProfileComponent implements OnInit {
     )
   }
 
-  async getMembership() {
+  getMembership() {
     this.httpClient.get(GRAPH_ENDPOINT_GROUPS).subscribe(
       data => {
-        this.azgroups = data.value[0].id;
-        return data.value[0].id;
+        this.azgroups = data["value"];
       }
     )
   }
 
-  async getRoles() {
-    await this.getMembership();
-    this.httpClient.get(GRAPH_ENDPOINT_ROLES + this.azgroups).subscribe(
+  getRoles() {
+    this.httpClient.get(GRAPH_ENDPOINT_ROLES).subscribe(
       data => {
-        this.azroles = data.value[0].id;
+        this.azroles = data["value"];
       }
     )
   }
