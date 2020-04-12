@@ -14,6 +14,7 @@ import { CountryInfoComponent } from './country-info/country-info.component';
 import { MsalModule, MsalInterceptor, MsalGuard } from '@azure/msal-angular';
 
 import { environment } from '../environments/environment';
+import { FinancialComponent } from './financial/financial.component';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -25,7 +26,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     ProfileComponent,
     FetchDataComponent,
     TestBlockerComponent,
-    CountryInfoComponent
+    CountryInfoComponent,
+    FinancialComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -62,6 +64,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
       { path: 'profile', component: ProfileComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate : [MsalGuard] },
       { path: 'country-info', component: CountryInfoComponent, canActivate: [MsalGuard] },
+      { path: 'financial', component: FinancialComponent, canActivate: [MsalGuard] },
       //{ path: 'fetch-data', component: FetchDataComponent },
       //{ path: 'country-info', component: CountryInfoComponent },
       { path: 'test-blocker', component: TestBlockerComponent },

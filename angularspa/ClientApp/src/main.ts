@@ -8,8 +8,13 @@ export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
 }
 
+export function getProxyUrl() {
+  return document.getElementsByTagName('base')[0].href + '/api';
+}
+
 const providers = [
-  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
+  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] },
+  { provide: 'PROXY_URL', useFactory: getBaseUrl, deps: [] }
 ];
 
 if (environment.production) {

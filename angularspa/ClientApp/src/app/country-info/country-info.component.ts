@@ -15,7 +15,7 @@ export class CountryInfoComponent {
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
 
     this.httpClient = http;
-    this.apiUrl = baseUrl + 'countryinfo';
+    this.apiUrl = baseUrl + 'api/countryinfo';
 
     let qparams = new HttpParams().set('countryName', "Canada");
 
