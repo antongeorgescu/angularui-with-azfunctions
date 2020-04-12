@@ -1,2 +1,19 @@
 <p>financial works!</p>
 <p>{{bitcoinalldata}}</p>
+
+<table border="1">
+  <tbody>
+    <tr>
+      <td>Currency</td>
+      <td>Buy</td>
+      <td>Sell</td>
+      <td>Symbol</td>
+    </tr>
+    <tr *ngFor="let record of bitcoinrecords">
+      <td>{{record?.currency}}</td>
+      <td>{{record?.buy | number:'.2'}}</td>
+      <td>{{record?.sell | number:'.2'}}</td>
+      <td>{{record?.symbol}}</td>
+    </tr>
+  </tbody>
+</table>
