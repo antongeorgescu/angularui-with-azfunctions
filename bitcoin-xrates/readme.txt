@@ -1,1 +1,0 @@
-﻿https://api.github.com/orgs/dotnet/repos
