@@ -25,16 +25,6 @@ namespace bitcoin_xrates.Controllers
         [HttpGet]
         public async Task<string> Get()
         {
-        
-            //var rng = new Random();
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            //{
-            //    Date = DateTime.Now.AddDays(index),
-            //    TemperatureC = rng.Next(-20, 55),
-            //    Summary = Summaries[rng.Next(Summaries.Length)]
-            //})
-            //.ToArray();
-
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
@@ -44,9 +34,9 @@ namespace bitcoin_xrates.Controllers
             return strval;
         }
 
-        // GET <controller>/bitcoin/all
-        [HttpGet("bitcoin/all")]
-        public async Task<IEnumerable<BitcoinRecord>> GetBitcoinAll()
+        // GET <controller>/bitcoin/all/async
+        [HttpGet("bitcoin/all/async")]
+        public async Task<IEnumerable<BitcoinRecord>> GetAsyncBitcoinAll()
         {
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
@@ -59,28 +49,28 @@ namespace bitcoin_xrates.Controllers
             var lstres = new List<BitcoinRecord>();
             foreach (var item in jxval.Children())
             {
-                //var itemProperties = item.Children<JProperty>();
-                ////you could do a foreach or a linq here depending on what you need to do exactly with the value
-                //var record = itemProperties.FirstOrDefault(x => x.Name == "sell");
-                //var psell = record.Value; ////This is a JValue type
                 lstres.Add(new BitcoinRecord()
                 {
-                    currency = item.Path.ToString(),
-                    sell = item.First()["sell"].ToString(),
-                    buy = item.First()["buy"].ToString(),
-                    symbol = item.First()["symbol"].ToString(),
+                    Currency = item.Path.ToString(),
+                    Sell = double.Parse(item.First()["sell"].ToString()),
+                    Buy = double.Parse(item.First()["buy"].ToString()),
+                    Symbol = item.First()["symbol"].ToString()
                 });
             }
             return lstres.ToArray<BitcoinRecord>();
 
-            //var xresult = new BitcoinRecord[lstres.Count];
-            //int i = 0;
-            //foreach (var item in lstres)
-            //{
-            //    xresult[i] = item;
-            //    i++;
-            //}
-            //return xresult;
+        }
+
+        // GET <controller>/bitcoin/all
+        [HttpGet("bitcoin/all")]
+        public IEnumerable<BitcoinRecord> GetBitcoinAll()
+        {
+            // use this call to transform an asynchronus call to a synchronous one:
+            // (async) var result = GetAsyncBitcoinAll()
+            // (sync) var result = GetAsyncBitcoinAll().Result;
+            var result = GetAsyncBitcoinAll().Result;
+            return result;
+
         }
 
         // GET <controller>/bitcoin/USD/500
@@ -101,9 +91,9 @@ namespace bitcoin_xrates.Controllers
     public class BitcoinRecord
     {
         //"USD" : {"15m" : 7112.92, "last" : 7112.92, "buy" : 7112.92, "sell" : 7112.92, "symbol" : "$"},
-        public string currency;
-        public string buy;
-        public string sell;
-        public string symbol;
+        public double Buy { get; set; }
+        public string Currency { get; set; }
+        public double Sell { get; set; }
+        public string Symbol { get; set; }
     }
 }

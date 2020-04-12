@@ -9,12 +9,10 @@ import { HttpClient } from '@angular/common/http';
 export class FinancialComponent implements OnInit {
   
   apiUrl: string;
-  httpClient: HttpClient;
-
+  
   public bitcoinrecords: BitcoinRate[];
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    this.httpClient = http;
     this.apiUrl = baseUrl + 'api/financials';
   }
 
@@ -29,17 +27,17 @@ export class FinancialComponent implements OnInit {
     //      this.bitcoinalldata = data;
     //    });
 
-    this.httpClient.get<BitcoinRate[]>(this.apiUrl + '/bitcoin/all').subscribe(
+    this.http.get<BitcoinRate[]>(this.apiUrl + '/bitcoin/all').subscribe(
       data => {
         this.bitcoinrecords = data;
-      });
+      }, error => console.error(error));
   }
 }
 
 interface BitcoinRate {
+  buy: number;
   currency: string;
-  buy: string;
-  sell: string;
+  sell: number;
   symbol: string;
 }
 
